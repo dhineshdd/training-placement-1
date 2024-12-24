@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class ArmstrongNumbersInRange {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the lower bound: ");
+        int lower = scanner.nextInt();
+        System.out.print("Enter the upper bound: ");
+        int upper = scanner.nextInt();
+        System.out.println("Armstrong numbers between " + lower + " and " + upper + ":");
+        for (int num = lower; num <= upper; num++) {
+            int originalNumber = num;
+            int result = 0;
+            int n = 0;
+
+            while (originalNumber != 0) {
+                originalNumber /= 10;
+                ++n;
+            }
+
+            originalNumber = num;
+
+            while (originalNumber != 0) {
+                int remainder = originalNumber % 10;
+                result += Math.pow(remainder, n);
+                originalNumber /= 10;
+            }
+
+            if (result == num) {
+                System.out.println(num);
+            }
+        }
+    }
+}
