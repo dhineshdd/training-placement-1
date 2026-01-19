@@ -1,0 +1,3 @@
+s = input("Enter string: ")
+sub = input("Enter substring: ")
+print("Present" if sub in s else "Not Present")
