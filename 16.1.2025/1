@@ -1,0 +1,8 @@
+lst = [4, 7, 1, 9, 3]
+key = 9
+for i in range(len(lst)):
+    if lst[i] == key:
+        print("Found at index", i)
+        break
+else:
+    print("Not Found")
