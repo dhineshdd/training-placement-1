@@ -1,0 +1,15 @@
+lst = [10, 20, 30, 40, 50]
+key = 30
+low, high = 0, len(lst) - 1
+
+while low <= high:
+    mid = (low + high) // 2
+    if lst[mid] == key:
+        print("Found at index", mid)
+        break
+    elif key < lst[mid]:
+        high = mid - 1
+    else:
+        low = mid + 1
+else:
+    print("Not Found")
